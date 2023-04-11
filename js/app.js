@@ -38,7 +38,7 @@ function successFunctionPost(response) {
     let name_value = name_id[`value`];
     let job_value = job_id[`value`];
     post_zone.insertAdjacentHTML(`afterend`, `<h1>success post</h1>`);
-    post_zone.insertAdjacentHTML(`afterend`, `<h1>${name_value}</h1><p>${job_value}</p><p>Created at:</p><p>ID:</p>`)
+    post_zone.insertAdjacentHTML(`afterend`, `<h1>${name_value}</h1><p>${job_value}</p><p>Created at:${response[`data`][`createdAt`]}</p><p>ID:${response[`data`][`id`]}</p>`)
 };
 
 let name_id = document.getElementById(`name`);
@@ -50,11 +50,11 @@ function post_user(details) {
     let job_value = job_id[`value`];
     axios.request({
         url: `https://reqres.in/api/users`,
-        Method: `POST`,
+        method: `POST`,
         data: {
             first_name: `${name_value}`,
             job: `${job_value}`
         }
-    });
+    }).then(successFunctionPost).catch(failureFunctionPost);
 };
 post_button.addEventListener(`click`, post_user);
