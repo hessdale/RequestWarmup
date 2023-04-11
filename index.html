@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,20 @@
 </head>
 
 <body>
-  <p>Hello World!</p>
+  <div id="get_zone"></div>
+  <button id="get">GET</button>
+
+  <div id="create_zone">
+    <h2>Create Employee</h2>
+  </div>
+  <label for="name">NAME:</label>
+  <input type="text" name="name" id="name">
+  <label for="job">JOB:</label>
+  <input type="text" name="job" id="job">
+  <button id="create_employee">CREATE</button>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 
 </html>
